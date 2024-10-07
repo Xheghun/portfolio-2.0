@@ -1,13 +1,25 @@
-"use client"
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+"use client";
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 
 export default function Wizard(props) {
-  const { nodes, materials } = useGLTF('/models/wizard-transformed.glb')
+  const modelRef = useRef();
+
+  useFrame((state, delta, frame) => {
+    modelRef.current.position.y = -1.5 + Math.sin(state.clock.elapsedTime) * 0.15;
+  });
+
+  const { nodes, materials } = useGLTF("/models/wizard-transformed.glb");
   return (
-    <group {...props} dispose={null} position={[0,-1.5,0]}
-    scale={[0.06,0.06,0.06]}
-    rotation={[0.25,0,0]}>
+    <group
+      {...props}
+      dispose={null}
+      position={[0, -1.5, 0]}
+      scale={[0.06, 0.06, 0.06]}
+      ref={modelRef}
+      rotation={[0.25, 0, 0]}
+    >
       <mesh
         castShadow
         receiveShadow
@@ -189,7 +201,7 @@ export default function Wizard(props) {
         scale={0.832}
       />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/models/wizard-transformed.glb')
+useGLTF.preload("/models/wizard-transformed.glb");
