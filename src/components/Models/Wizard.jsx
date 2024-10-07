@@ -7,7 +7,8 @@ export default function Wizard(props) {
   const modelRef = useRef();
 
   useFrame((state, delta, frame) => {
-    modelRef.current.position.y = -1.5 + Math.sin(state.clock.elapsedTime) * 0.15;
+    modelRef.current.position.y =
+      -1.5 + Math.sin(state.clock.elapsedTime) * 0.15;
   });
 
   const { nodes, materials } = useGLTF("/models/wizard-transformed.glb");
