@@ -37,9 +37,30 @@ const AboutDetails = () => {
         </ItemLayout>
 
         <ItemLayout className={`col-span-4 text-accent`}>
-        <p className="font-semibold w-full text-left text-5xl">
-            25+<sub className="font-semibold text-base">Years of Experience</sub>
+          <p className="font-semibold w-full text-left text-5xl">
+            25+
+            <sub className="font-semibold text-base">Years of Experience</sub>
           </p>
+        </ItemLayout>
+
+        <ItemLayout className={`col-span-8 p-0`}>
+          <img
+            className="w-full h-auto"
+            src="https://github-readme-stats.vercel.app/api?username=xheghun&theme=transparent&hide_boder=true
+            &title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false"
+            alt="david github stats"
+            loading="lazy"
+          />
+        </ItemLayout>
+
+        <ItemLayout className={`col-span-4 p-0`}>
+        <img
+            className="w-full h-auto"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=xheghun&theme=transparent&hide_boder=true
+            &title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false"
+            alt="david github stats"
+            loading="lazy"
+          />
         </ItemLayout>
       </div>
     </section>
