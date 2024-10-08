@@ -54,11 +54,38 @@ const AboutDetails = () => {
         </ItemLayout>
 
         <ItemLayout className={`col-span-4 p-0`}>
-        <img
+          <img
             className="w-full h-auto"
             src="https://github-readme-stats.vercel.app/api/top-langs/?username=xheghun&theme=transparent&hide_boder=true
             &title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false"
-            alt="david github stats"
+            alt="david github top languages"
+            loading="lazy"
+          />
+        </ItemLayout>
+
+        <ItemLayout className={`col-span-full`}>
+          <img
+            className="w-full h-auto"
+            src="https://skillicons.dev/icons?i=kotlin,ktor,java,dart,swift,js,html,css,php,react,apple,azure,bitbucket,devto,docker,figma,xd,firebase,flutter,git,gitlab,gradle,graphql,idea,materialui,maven,mysql,netlify,nodejs,psotman,stackoverflow,unity,npm,sass,sentry,svg,vscode"
+            alt="david skill icons"
+            loading="lazy"
+          />
+        </ItemLayout>
+
+        <ItemLayout className={`col-span-6 !p-0`}>
+          <img
+            className="w-full h-auto"
+            src="https://github-readme-streak-stats.herokuapp.com?user=xheghun&theme=dark&hide_border=true&mode=weekly&exclude_days=Sun%2CSat&background=FFFFFF00&ring=FEFE5B&currStreakLabel=FEFE5B&fire=FEFE5B"
+            alt="GitHub Streak"
+            loading="lazy"
+          />
+        </ItemLayout>
+
+        <ItemLayout className={`col-span-6 !p-0`}>
+          <img
+            className="w-full h-auto"
+            src="https://github-readme-stats.vercel.app/api/pin/?username=xheghun&repo=jetpack_mvvm_sample&theme=transparent&hide_boder=true&title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false"
+            alt="GitHub repo"
             loading="lazy"
           />
         </ItemLayout>
