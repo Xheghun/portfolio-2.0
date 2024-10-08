@@ -2,6 +2,7 @@ import Image from "next/image";
 import bg from "../../../../public/background/about-background.png";
 import RenderModel from "@/components/RenderModel";
 import Hat from "@/components/Models/Hat";
+import AboutDetails from "@/components/about";
 
 export default function About() {
   return (
@@ -24,6 +25,8 @@ export default function About() {
           <p className="font-light text-foreground text-ls">The mastermind behind this artwork</p>
         </div>
       </div>
+
+      <AboutDetails />
     </>
   );
 }
