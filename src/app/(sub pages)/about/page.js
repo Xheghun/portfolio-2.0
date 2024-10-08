@@ -1,8 +1,6 @@
 import Image from "next/image";
 import bg from "../../../../public/background/about-background.png";
 import RenderModel from "@/components/RenderModel";
-import ProjectList from "@/components/projects";
-import { projectsData } from "../../data";
 import Hat from "@/components/Models/Hat";
 
 export default function About() {
@@ -21,9 +19,9 @@ export default function About() {
       </div>
 
       <div className="relative w-full h-screen flex flex-col items-center justify-center">
-        <div className="absoloute flex flex-col items-center top-[60%] left-1/2 -translate-x-1/2">
-          <h1>David Rufai</h1>
-          <p>The mastermind behind this artwork</p>
+        <div className="absolute flex flex-col items-center top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <h1 className="font-bold text-8xl text-accent">David Rufai</h1>
+          <p className="font-light text-foreground text-ls">The mastermind behind this artwork</p>
         </div>
       </div>
     </>
