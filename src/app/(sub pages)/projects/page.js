@@ -5,7 +5,7 @@ import ProjectList from "@/components/projects";
 import { projectsData } from "../../data";
 import Staff  from "@/components/Models/Staff";
 
-export default function Home() {
+export default function Projects() {
   return (
     <>
       <Image
