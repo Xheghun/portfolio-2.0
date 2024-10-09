@@ -19,7 +19,7 @@ export default function ContactForm() {
         {
           publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
           limitRate: {
-            throttle: 5000 //(5000 / 5) * 30 * 60, //limit to one email every 30 minutes
+            throttle: 5000, //(5000 / 5) * 30 * 60, //limit to one email every 30 minutes
           },
         }
       )
@@ -55,14 +55,35 @@ export default function ContactForm() {
         className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
         type="text"
         placeholder="Name"
-        {...register("name", { required: true })}
+        {...register("name", {
+          required: "Name field is required",
+          minLength: { value: 3, message: "Enter a minimum of 3 characters" },
+        })}
       />
+      {errors.name && (
+        <span className="inline-block self-start text-accent">
+          {errors.name.message}
+        </span>
+      )}
+
       <input
         className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
         type="email"
         placeholder="Email"
-        {...register("email", { required: true })}
+        {...register("email", {
+          required: "Email field is required",
+          minLength: {
+            value: 3,
+            message: "Enter a valid email of 3 characters",
+          },
+        })}
       />
+      {errors.email && (
+        <span className="inline-block self-start text-accent">
+          {errors.email.message}
+        </span>
+      )}
+
       <input
         className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
         type="tel"
@@ -72,8 +93,20 @@ export default function ContactForm() {
       <textarea
         placeholder="Message"
         className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
-        {...register("message", { required: true, max: 300, min: 9 })}
+        {...register("message", {
+          required: "Please add your message to this field",
+          max: {
+            value: 300,
+            message: "Message should be within 10 - 300 characters",
+          },
+          min: {value: 9, message: "Message should be within 10 - 300 characters"},
+        })}
       />
+      {errors.message && (
+        <span className="inline-block self-start text-accent">
+          {errors.message.message}
+        </span>
+      )}
 
       <input
         value="Cast your message"
