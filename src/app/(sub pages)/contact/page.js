@@ -1,6 +1,7 @@
 import Image from "next/image";
 import bg from "../../../../public/background/contact-background.png";
 import AboutDetails from "@/components/about";
+import ContactForm from "@/components/contact/form";
 
 export default function Contact() {
   return (
@@ -24,6 +25,7 @@ export default function Contact() {
             Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
           </p>
         </div>
+        <ContactForm />
       </article>
     </>
   );
