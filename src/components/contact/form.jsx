@@ -95,11 +95,11 @@ export default function ContactForm() {
         className="w-full p-2 rounded-md shadow-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg"
         {...register("message", {
           required: "Please add your message to this field",
-          max: {
+          maxLength: {
             value: 300,
             message: "Message should be within 10 - 300 characters",
           },
-          min: {value: 9, message: "Message should be within 10 - 300 characters"},
+          minLength: {value: 9, message: "Message should be within 10 - 300 characters"},
         })}
       />
       {errors.message && (
