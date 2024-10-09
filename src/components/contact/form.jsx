@@ -14,6 +14,7 @@ export default function ContactForm() {
   const sendEmail = (params) => {
 
     const toastId = toast.loading("sending message.....")
+    const name = params.from_name.split(" ")[0]
   
     emailJs
       .send(
@@ -29,10 +30,10 @@ export default function ContactForm() {
       )
       .then(
         () => {
-          toast.success(`Thanks! ${params.from_name}`)
+          toast.success(`Thanks! Got your message ${name}, I'll be in touch`, {id: toastId})
         },
         (error) => {
-          toast.error(`ops! your message didn't go through. it not you, it's me ${params.from_name}`)
+          toast.error(`Ops! your message didn't go through ${name}. it not you, it's me`, {id: toastId})
         }
       );
   };
