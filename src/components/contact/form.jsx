@@ -2,6 +2,7 @@
 import emailJs from "@emailjs/browser";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Toaster, toast } from "sonner";
 
 export default function ContactForm() {
   const {
@@ -11,6 +12,9 @@ export default function ContactForm() {
   } = useForm();
 
   const sendEmail = (params) => {
+
+    const toastId = toast.loading("sending message.....")
+  
     emailJs
       .send(
         process.env.NEXT_PUBLIC_SERVICE_ID,
@@ -25,10 +29,10 @@ export default function ContactForm() {
       )
       .then(
         () => {
-          console.log("SUCCESS!");
+          toast.success(`Thanks! ${params.from_name}`)
         },
         (error) => {
-          console.log("FAILED...", error);
+          toast.error(`ops! your message didn't go through. it not you, it's me ${params.from_name}`)
         }
       );
   };
@@ -47,6 +51,8 @@ export default function ContactForm() {
   console.log(errors);
 
   return (
+    <>
+    <Toaster richColors={true} /> 
     <form
       className="max-w-md w-full flex flex-col items-center justify-center space-y-4"
       onSubmit={handleSubmit(onSubmit)}
@@ -114,5 +120,6 @@ export default function ContactForm() {
         type="submit"
       />
     </form>
+    </>
   );
 }
