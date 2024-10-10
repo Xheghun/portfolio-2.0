@@ -3,7 +3,7 @@ import bg from "../../../../public/background/projects-background.png";
 import RenderModel from "@/components/RenderModel";
 import ProjectList from "@/components/projects";
 import { projectsData } from "../../data";
-import Staff  from "@/components/Models/Staff";
+import Staff from "@/components/Models/Staff";
 
 export default function Projects() {
   return (
@@ -16,7 +16,12 @@ export default function Projects() {
 
       <ProjectList projects={projectsData} />
 
-      <div className="flex items-center justify-center fixed top-20 -left-24 h-screen">
+      <div
+        className="flex items-center justify-center fixed top-16 lg:top-20
+      -translate-x-1/2 lg:translate-x-0 -z-10
+      left-1/2
+      lg:-left-24 h-screen"
+      >
         <RenderModel>
           <Staff />
         </RenderModel>
