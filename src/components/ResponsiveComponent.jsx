@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import useScreenSize from "./hooks/useScreenSize";
 
 const ResponsiveComponent = ({ children }) => {
