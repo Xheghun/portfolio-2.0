@@ -5,7 +5,7 @@ const ItemLayout = ({ children, className }) => {
   return (
     <div
       className={clsx(
-        "custom-bg p-8 rounded-xl flex items-center justify-center space-y-8",
+        "custom-bg p-6 sm:p-8 rounded-xl flex items-center justify-center space-y-8",
         className
       )}
     >
@@ -16,12 +16,12 @@ const ItemLayout = ({ children, className }) => {
 const AboutDetails = () => {
   return (
     <section className="py-20 w-full">
-      <div className="grid grid-cols-12 gap-8 w-full">
-        <ItemLayout className={`col-span-8 row-span-2 flex-col items-start`}>
-          <h2 className="text-2xl w-full text-left capitalize">
+      <div className="grid grid-cols-12 gap-4 md:gap-8 xs:gap-6 w-full">
+        <ItemLayout className={`col-span-full lg:col-span-8 row-span-2 flex-col items-start`}>
+          <h2 className=" text-xl md:text-2xl w-full text-left capitalize">
             Pioneer of Performance
           </h2>
-          <p className="font-light">
+          <p className="font-light text-xs sm:text-sm md:text-base">
             lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
             ipsum lorem lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
             ipsum lorem ipsum lorem ipsum lorem ipsum ipsum lorem ipsum lorem
@@ -30,33 +30,35 @@ const AboutDetails = () => {
           </p>
         </ItemLayout>
 
-        <ItemLayout className={`col-span-4 text-accent`}>
-          <p className="font-semibold w-full text-left text-5xl">
+        <ItemLayout className={`col-span-full xs-col-span-6 lg:col-span-4 text-accent`}>
+          <p className="font-semibold w-full text-left text-2xl sm:text-5xl">
             25+<sub className="font-semibold text-base">Clients</sub>
           </p>
         </ItemLayout>
 
-        <ItemLayout className={`col-span-4 text-accent`}>
-          <p className="font-semibold w-full text-left text-5xl">
+        <ItemLayout className={`col-span-full xs-col-span-6 lg:col-span-4 text-accent`}>
+          <p className="font-semibold w-full text-left text-2xl sm:text-5xl">
             25+
             <sub className="font-semibold text-base">Years of Experience</sub>
           </p>
         </ItemLayout>
 
-        <ItemLayout className={`col-span-8 p-0`}>
-          <img
-            className="w-full h-auto"
-            src="https://github-readme-stats.vercel.app/api?username=xheghun&theme=transparent&hide_border=true&title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false"
-            alt="david github stats"
-            loading="lazy"
-          />
-        </ItemLayout>
+        
 
-        <ItemLayout className={`col-span-4 p-0`}>
+        <ItemLayout className={`col-span-full sm:col-span-6 md:col-span-4 !p-0`}>
           <img
             className="w-full h-auto"
             src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xheghun&hide=html,css,php,objective-c,hack,cmake,JavaScript&theme=transparent&hide_border=true&title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false"
             alt="david github top languages"
+            loading="lazy"
+          />
+        </ItemLayout>
+
+        <ItemLayout className={`col-span-full md:col-span-8 !p-0`}>
+          <img
+            className="w-full h-auto"
+            src="https://github-readme-stats.vercel.app/api?username=xheghun&theme=transparent&hide_border=true&title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false"
+            alt="david github stats"
             loading="lazy"
           />
         </ItemLayout>
@@ -70,7 +72,7 @@ const AboutDetails = () => {
           />
         </ItemLayout>
 
-        <ItemLayout className={`col-span-6 !p-0`}>
+        <ItemLayout className={`col-span-full md:col-span-6 !p-0`}>
           <img
             className="w-full h-auto"
             src="https://github-readme-streak-stats.herokuapp.com?user=xheghun&theme=dark&hide_border=true&mode=weekly&exclude_days=Sun%2CSat&background=FFFFFF00&ring=FEFE5B&currStreakLabel=FEFE5B&fire=FEFE5B"
@@ -79,7 +81,7 @@ const AboutDetails = () => {
           />
         </ItemLayout>
 
-        <ItemLayout className={`col-span-6 !p-0`}>
+        <ItemLayout className={`col-span-full md:col-span-6 !p-0`}>
           <img
             className="w-full h-auto"
             src="https://github-readme-stats.vercel.app/api/pin/?username=xheghun&repo=jetpack_mvvm_sample&theme=transparent&title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false&hide_border=true"
