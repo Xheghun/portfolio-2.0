@@ -4,6 +4,18 @@ import React from "react";
 import NavButton from "./NavButton";
 import useScreenSize from "../hooks/useScreenSize";
 import ResponsiveComponent from "../ResponsiveComponent";
+import { motion } from "framer-motion";
+
+
+const container = {
+  hidden: {opacity: 0},
+  show: {
+    opacity: 1,
+    transition: {
+      staggeredChildren: 0.3
+    }
+  }
+}
 
 const Navigation = () => {
   const angleIncrement = 360 / BtnList.length;
@@ -18,7 +30,11 @@ const Navigation = () => {
       <ResponsiveComponent>
         {({ size }) => {
           return size && size >= 480 ? (
-            <div className="w-max items-center justify-center relative hover:pause animate-spin-slow group">
+            <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="w-max items-center justify-center relative hover:pause animate-spin-slow group">
               {BtnList.map((btn, index) => {
                 const angleRad = (index * angleIncrement * Math.PI) / 180;
                 const radius = isLargeScreen
@@ -31,7 +47,7 @@ const Navigation = () => {
                 const y = `calc(${radius}*${Math.sin(angleRad)})`;
                 return <NavButton key={btn.label} x={x} y={y} {...btn} />;
               })}
-            </div>
+            </motion.div>
           ) : (
             <>
               <div className="w-full px-2.5 xs:p-0 xs:w-max space-y-4 flex flex-col items-start xs:items-center justify-center relative group">

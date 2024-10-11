@@ -12,6 +12,7 @@ import Link from "next/link";
 import React from "react";
 import ResponsiveComponent from "../ResponsiveComponent";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 const NavButton = ({
   x,
@@ -44,6 +45,12 @@ const NavButton = ({
         return <Home className="w-full h-auto" strokeWidth={1.5} />;
     }
   };
+
+  const item = {
+    hidden: { scale: 0 },
+    show: { scale: 1 },
+  };
+
   return (
     <ResponsiveComponent>
       {({ size }) => {
