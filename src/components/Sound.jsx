@@ -7,8 +7,10 @@ const Sound = () => {
     const audioRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false);
   const toggle = () => {
-    setIsPlaying(!isPlaying);
+    const newState = !isPlaying
+    setIsPlaying(newState);
     isPlaying ? audioRef.current.pause(): audioRef.current.play()
+    localStorage.setItem("musicConsent", String(newState))
   };
 
   return (
