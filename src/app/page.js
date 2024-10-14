@@ -2,6 +2,7 @@ import Image from "next/image";
 import bg from '../../public/background/home-background.png'
 import RenderModel from "@/components/RenderModel";
 import Navigation from "@/components/navigation";
+import dynamic from "next/dynamic";
 
 const Wizard = dynamic(()=> import("@/components/Models/Wizard"), {ssr: false});
 
