@@ -16,13 +16,13 @@ const Modal = ({ onClose, onToggle }) => {
         </p>
         <div className="flex items-center justify-center space-x-4">
           <button
-            className="px-4 py-2 border border-accent-30 border-solid hover:shadow-glass-sm rounded mr-2"
+            className="px-4 py-2 border border-accent/30 border-solid hover:shadow-glass-sm rounded mr-2"
             onClick={onToggle}
           >
             Yes
           </button>
           <button
-            className="px-4 py-2 border border-accent-30 border-solid hover:shadow-glass-sm rounded"
+            className="px-4 py-2 border border-accent/30 border-solid hover:shadow-glass-sm rounded"
             onClick={onClose}
           >
             No
