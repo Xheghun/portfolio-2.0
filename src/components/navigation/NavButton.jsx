@@ -42,7 +42,7 @@ const item = {
   show: { scale: 1 }
 };
 
-const NavLink = motion.create(Link);
+const NavLink = motion(Link);
 
 const NavButton = ({
   x,
