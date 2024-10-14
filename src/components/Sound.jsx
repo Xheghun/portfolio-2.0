@@ -1,17 +1,54 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
+import { createPortal } from "react-dom/cjs/react-dom.production.min";
+
+
+const Modal = ({onClose,  toggle}) => {
+    return createPortal(
+        <div></div>
+
+    )
+}
+
 
 const Sound = () => {
-    const audioRef = useRef(null)
+  const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const toggle = () => {
-    const newState = !isPlaying
+    const newState = !isPlaying;
     setIsPlaying(newState);
-    isPlaying ? audioRef.current.pause(): audioRef.current.play()
-    localStorage.setItem("musicConsent", String(newState))
+    isPlaying ? audioRef.current.pause() : audioRef.current.play();
+    localStorage.setItem("musicConsent", String(newState));
   };
+
+  const handleFirstUserInteraction = () => {
+    const consent = localStorage.getItem("musicConsent");
+
+    if (consent === "true" && !isPlaying) {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+
+      ["click", "keydown", "touchstart"].forEach((event) => {
+        document.removeEventListener(event, handleFirstUserInteraction);
+      });
+  }
+
+  useEffect(() => {
+    const consent = localStorage.getItem("musicConsent");
+
+    if (consent) {
+      setIsPlaying(consent === "true");
+
+      if (consent === "true") {
+        ["click", "keydown", "touchstart"].forEach((event) => {
+          document.addEventListener(event, handleFirstUserInteraction);
+        });
+      }
+    }
+  }, []);
 
   return (
     <div className="fixed top-4 right-2.5 xs:right-4 z-50 group">
