@@ -9,7 +9,7 @@ const item = {
   show: { scale: 1, y: 0 }
 };
 
-const NavLink = motion.create(Link);
+const NavLink = motion(Link);
 
 
 const ProjectLayout = ({ name, description, date, demoLink }) => {
