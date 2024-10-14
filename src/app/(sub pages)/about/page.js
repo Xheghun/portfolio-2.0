@@ -1,14 +1,16 @@
 import Image from "next/image";
 import bg from "../../../../public/background/about-background.png";
 import RenderModel from "@/components/RenderModel";
-import Hat from "@/components/Models/Hat";
 import AboutDetails from "@/components/about";
+
+const Hat = dynamic(()=> import("@/components/Models/Hat"), {ssr: false});
 
 export default function About() {
   return (
     <>
       <Image
         src={bg}
+        priority sizes="100vw"
         alt="background-image"
         className="-z-50 fixed top-0 left-0 w-full h-full object-cover object-center opacity-25"
       />
