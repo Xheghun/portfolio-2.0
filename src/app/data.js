@@ -26,17 +26,17 @@ export const projectsData = [
   },
   {
     id: 2,
-    name: "ArtGallery Online",
-    description: "Digital art showcase platform",
+    name: "MyCover.ai Mobile SDK",
+    description: "An insurance policy management SDK designed to streamline the purchase process, making it swift, simple, and user-friendly, powered by MyCover.ai APIs. It’s implemented across Android, iOS, React Native, and Flutter for seamless integration.",
     date: "2022-06-20",
-    demoLink: "https://artgalleryonline.example.com",
+    demoLink: "https://docs.mycover.ai/libraries-and-sdks/flutter",
   },
   {
     id: 3,
-    name: "BudgetPlanner",
-    description: "Plan and track expenses",
+    name: "Contextual Android SDK",
+    description: "This fully customizable SDK allows you build a no-code personalized in-app communication to users in your Android app. this sdk provides customizable elements that you can use. it also exposes low-level APIs that underpin UIs in your app so that you can build fully custom experiences to delight your users.",
     date: "2022-09-10",
-    demoLink: "https://budgetplanner.example.com",
+    demoLink: "https://docs.contextu.al/sdks/android/integration/",
   },
   {
     id: 4,
