@@ -40,17 +40,17 @@ export const projectsData = [
   },
   {
     id: 4,
-    name: "HealthBeat",
-    description: "Monitor heart rate zones",
+    name: "XPLeague",
+    description: "XPLeague is a sports prediction app that rewards the top 10 users each week based on their leaderboard rankings.",
     date: "2022-05-30",
-    demoLink: "https://healthbeat.example.com",
+    demoLink: "https://play.google.com/store/apps/details?id=co.weprototype.xpleague",
   },
   {
     id: 5,
     name: "RecipeFinder",
     description: "Discover new recipes",
     date: "2022-07-12",
-    demoLink: "https://recipefinder.example.com",
+    demoLink: "https://play.google.com/store/apps/details?id=co.weprototype.xpleague",
   },
   {
     id: 6,
