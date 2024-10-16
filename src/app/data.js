@@ -19,10 +19,10 @@ Websites:
 export const projectsData = [
   {
     id: 1,
-    name: "EcoTracker",
-    description: "Track your carbon footprint",
+    name: "Kindred Android SDK",
+    description: "A white-labeled Android SDK designed to enhance the user shopping experience by providing access to global deals and coupons. Seamlessly integrated into existing apps, it helps users save money while enabling businesses to earn incremental revenue through tailored offers and promotions.",
     date: "2022-08-15",
-    demoLink: "https://ecotracker.example.com",
+    demoLink: "https://docs.kindredsdk.com/docs/sdk-for-android-mobile-browser",
   },
   {
     id: 2,
